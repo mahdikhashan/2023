@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        td {
+            width: 10px;
+            height: 10px;
+            border: 1px solid #000;
+            text-align: center;
+        }
+
+        .point {
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <script>
+            // Create a 100x100 2D array filled with 'O's
+            const array = new Array(100).fill(null).map(() => new Array(100).fill('O'));
+
+            // List of points from your provided list
+            const points = [
+  [99, 38], [98, 38], [97, 38], [96, 38], [95, 37], [94, 36], [93, 35], [92, 34],
+  [92, 33], [93, 32], [93, 31], [93, 30], [93, 29], [93, 28], [93, 27], [93, 26],
+  [92, 25], [93, 25], [94, 25], [95, 25], [96, 25], [97, 25], [98, 25], [99, 24],
+  [99, 25], [99, 26], [98, 27], [97, 28], [96, 29], [96, 30], [95, 31], [94, 31],
+  [93, 30], [92, 29], [91, 28]
+];
+
+            // Mark the points with 'X'
+            for (const point of points) {
+                const [x, y] = point;
+                array[y][x] = 'X';
+            }
+
+            // Create the table and add the 'O's and 'X's
+            for (let i = 0; i < 100; i++) {
+                const tr = document.createElement('tr');
+                for (let j = 0; j < 100; j++) {
+                    const td = document.createElement('td');
+                    td.textContent = array[i][j];
+                    if (array[i][j] === 'X') {
+                        td.classList.add('point');
+                    }
+                    tr.appendChild(td);
+                }
+                document.querySelector('table').appendChild(tr);
+            }
+        </script>
+    </table>
+</body>
+</html>

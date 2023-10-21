@@ -1,0 +1,17 @@
+{
+  "name": "2023",
+  "version": "1.0.0",
+  "description": "ccc-2023-linz",
+  "main": "level1.js",
+  "scripts": {
+    "test-level1": "node level1.js < level1/level1_5.in",
+    "test-level2": "node level2.js < level2/level2_5.in",
+    "test-level3": "node level3.js < level3/level3_3.in",
+    "draw": "node debug/draw.js"
+  },
+  "author": "Mahdi Khashan",
+  "license": "ISC",
+  "dependencies": {
+    "readline": "^1.3.0"
+  }
+}
